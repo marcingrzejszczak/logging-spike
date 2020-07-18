@@ -3,6 +3,7 @@
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
             <jsonGeneratorDecorator class="com.github.skjolber.decorators.SyntaxHighlightingDecorator"/>
         </encoder>
+
     </appender>
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -11,12 +12,13 @@
         </encoder>
     </appender>
 
-    <logger name="com.spike.server" level="debug" additivity="false">
+    <logger name="com.spike.consumer" level="debug" additivity="false">
         <appender-ref ref="logstash"/>
     </logger>
 
     <root level="info">
         <appender-ref ref="logstash"/>
     </root>
+
 
 </configuration>

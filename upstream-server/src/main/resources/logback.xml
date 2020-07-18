@@ -1,6 +1,7 @@
 <configuration>
     <appender name="logstash" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <jsonGeneratorDecorator class="com.github.skjolber.decorators.SyntaxHighlightingDecorator"/>
         </encoder>
     </appender>
 

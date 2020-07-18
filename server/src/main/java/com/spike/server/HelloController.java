@@ -22,8 +22,7 @@ public class HelloController {
     @GetMapping("/greet")
     public Hello greet() {
         log.info("Received greet request");
-        restTemplate.postForLocation("http://localhost:8081/audit",
-                HttpMethod.POST, new HttpEntity<>("Foo Bar"));
+        restTemplate.postForLocation("http://localhost:8081/audit", HttpMethod.POST, new HttpEntity<>("Foo Bar"));
         return new Hello("hello world");
     }
 }

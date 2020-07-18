@@ -19,7 +19,8 @@ public class MvcConfig implements WebMvcConfigurer {
     @Bean
     public RestTemplate createRestTemplate() {
         return new RestTemplateBuilder()
-                .interceptors(new RestTemplateTraceContextInterceptor())
+                .interceptors(new RestTemplateTraceContextInterceptor(),
+                        new ResponseTrendLoggingInterceptor())
                 .build();
     }
 }
