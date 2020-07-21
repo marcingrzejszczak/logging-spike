@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
-import static io.micrometer.core.instrument.util.StringUtils.isNotEmpty;
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
+
 
 public class TraceContextInterceptor extends HandlerInterceptorAdapter {
 
