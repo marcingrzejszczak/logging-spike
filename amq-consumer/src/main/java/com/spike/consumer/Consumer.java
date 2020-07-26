@@ -20,7 +20,7 @@ public class Consumer {
     @JmsListener(destination = "audit")
     @LogExecutionTime("messageConsumer")
     public void receiveMessage(ActiveMQTextMessage message) throws JMSException, IOException {
-        setTraceContext(message);
+//        setTraceContext(message);
         log.info("Received message: {}", message.getText());
 
         if(message.getRedeliveryCounter() < 2) {

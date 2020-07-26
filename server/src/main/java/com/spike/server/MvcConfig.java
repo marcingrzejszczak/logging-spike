@@ -11,16 +11,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new TraceContextInterceptor());
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new TraceContextInterceptor());
+//    }
 
     @Bean
     public RestTemplate createRestTemplate() {
+//        return new RestTemplateBuilder()
+//                .interceptors(new RestTemplateTraceContextInterceptor(),
+//                        new ResponseTrendLoggingInterceptor())
+//                .build();
         return new RestTemplateBuilder()
-                .interceptors(new RestTemplateTraceContextInterceptor(),
-                        new ResponseTrendLoggingInterceptor())
+                .interceptors(new ResponseTrendLoggingInterceptor())
                 .build();
     }
 }
